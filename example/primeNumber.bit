@@ -1,0 +1,26 @@
+# bit
+
+func isPrime
+    @ number = input "数字を入力 > "
+    @ divisor = 2
+    @ prime = true
+    
+    if number < 2
+        $ prime = false
+    else
+        for divisor * divisor <= number
+            if number % divisor == 0
+                $ prime = false
+            .
+            $ divisor = divisor + 1
+        .
+    .
+
+    if prime == true
+        print number + " は素数です！"
+    else
+        print number + " は素数ではありません。"
+    .
+.
+
+call isPrime
